@@ -1,0 +1,152 @@
+*{
+    box-sizing: border-box;
+}
+
+.home{
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f8fafc;
+    color: #172033;
+}
+
+/*Navbar*/
+.navbar {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8%;
+    background: white;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.logo {
+    font-size: 24px;
+    margin: 0;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #172033;
+    font-size: 15px;
+}
+
+.nav-buttons {
+    padding: 10px 18px;
+    border-radius: 7px;
+    background: #172033;
+    color: white !important;
+}
+
+/*Hero*/
+
+.hero {
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 70px 8%;
+    background: white;
+}
+
+.hero-content {
+    max-width: 700px;
+    text-align: center;
+}
+
+.tagline {
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 100px;
+}
+
+.hero h1 {
+    font-size: 60px;
+    line-height: 1.1;
+    margin: 0 0 25px;
+}
+
+.hero h1 span{
+    text-decoration: underline;
+}
+
+.hero-text {
+    max-width: 600px;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #5d6678;
+}
+
+/*buttons*/
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.primary-button,
+.secondary-button {
+    text-decoration: none;
+    padding: 13px 25px;
+    border-radius: 7px;
+    font-weight: bold;
+}
+
+.primary-button {
+    background : #172033;
+    color: white;
+}
+
+.secondary-button {
+    border: 1px solid #172033;
+    color: #172033
+}
+
+/*Features*/
+
+.features {
+    padding: 70px 8%;
+    text-align: center;
+}
+
+.features h2{
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.feature-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.feature-card {
+    width: 30%;
+    padding: 30px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    text-align: left;
+}
+
+.feature-icon {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    color: #667085;
+    line-height: 1.6;
+}
