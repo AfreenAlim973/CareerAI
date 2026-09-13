@@ -11,6 +11,7 @@ import Careers from "./pages/Careers";
 import Roadmap from "./pages/Roadmap";
 import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
+import Colleges from "./pages/Colleges";
 
 function App() {
   return(
@@ -41,6 +42,8 @@ function App() {
         path="/reset-password/:token"
         element={<ResetPassword />}
         />
+
+        <Route path="/colleges" element={<Colleges />} />
 
       </Routes>
     </BrowserRouter>
