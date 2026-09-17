@@ -18,6 +18,9 @@ const userSchema = new mongoose.Schema({
         type: String,
         default: ""
     },
+    stream: {
+    type: String
+    },
     skills: {
         type: String,
         default: ""

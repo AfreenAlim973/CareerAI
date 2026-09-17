@@ -12,6 +12,8 @@ import Roadmap from "./pages/Roadmap";
 import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
 import Colleges from "./pages/Colleges";
+import CareerDetails from "./pages/CareerDetails";
+import Opportunities from "./pages/Opportunities";
 
 function App() {
   return(
@@ -44,6 +46,10 @@ function App() {
         />
 
         <Route path="/colleges" element={<Colleges />} />
+
+        <Route path="/career-details" element={<CareerDetails />} />
+
+        <Route path="/opportunities" element={<Opportunities />} />
 
       </Routes>
     </BrowserRouter>

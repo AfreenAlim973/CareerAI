@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Colleges.css";
 
 function Colleges() {
@@ -7,6 +7,61 @@ function Colleges() {
     const [stateFilter, setStateFilter] = useState("All");
     const [courseFilter, setCourseFilter] = useState("All");
     const [typeFilter, setTypeFilter] = useState("All");
+    const [recommendedCareer, setRecommendedCareer] = useState("");
+
+    const careerCourseMap = {
+    "Software Developer": "B.Tech",
+    "AI/ML Engineer": "B.Tech",
+    "Data Scientist": "B.Tech",
+    "Data Analyst": "BCA",
+    "Cybersecurity Analyst": "B.Tech",
+    "Cloud Engineer": "B.Tech",
+    "UI/UX Designer": "B.A.",
+    "Chartered Accountant": "B.Com",
+    "Financial Analyst": "B.Com",
+    "Business Analyst": "BBA",
+    "Management Consultant": "MBA",
+    "Marketing Specialist": "BBA",
+    "Doctor / Medical Practitioner": "MBBS",
+    "Pharmacist": "B.Sc",
+    "Biotechnology Professional": "B.Sc",
+    "Healthcare Administrator": "MBA",
+    "Civil Engineer": "B.Tech",
+    "Mechanical Engineer": "B.Tech",
+    "Electrical Engineer": "B.Tech",
+    "Robotics & Automation Engineer": "B.Tech",
+    "Lawyer": "LL.B.",
+    "Civil Services": "B.A.",
+    "Policy Analyst": "B.A.",
+    "Graphic Designer": "B.A.",
+    "Digital Content Creator": "B.A.",
+    "Journalist": "B.A.",
+    "Animator": "B.A.",
+    "Psychologist": "B.A.",
+    "Teacher / Educator": "B.A.",
+    "Translator": "B.A.",
+    "Environmental Scientist": "B.Sc",
+    "Research Scientist": "B.Sc",
+    "Mathematician": "B.Sc"
+};
+
+    useEffect(() => {
+    const savedUser = JSON.parse(localStorage.getItem("user"));
+
+    if (savedUser) {
+        const savedCareer = localStorage.getItem("recommendedCareer");
+
+        if (savedCareer) {
+            setRecommendedCareer(savedCareer);
+
+            const recommendedCourse = careerCourseMap[savedCareer];
+
+            if (recommendedCourse) {
+                setCourseFilter("All");
+            }
+        }
+    }
+}, []);
 
     const colleges = [
         {
@@ -138,14 +193,6 @@ function Colleges() {
             type: "State University"
         },
         {
-            name: "Savitribai Phule Pune University (SPPU)",
-            city: "Pune",
-            state: "Maharashtra",
-            courses: "B.A., B.Sc., B.Com, B.E./B.Tech, B.Pharm, M.A., M.Sc., M.Com, M.E./M.Tech, MBA, MCA, LL.B., LL.M., Ph.D.",
-            website: "https://unipune.ac.in/",
-            type: "State University"
-        },
-        {
             name: "University of Mumbai (MU)",
             city: "Mumbai",
             state: "Maharashtra",
@@ -176,7 +223,129 @@ function Colleges() {
             courses: "B.A., B.Sc., B.Com, BCA, BBA, B.Ed, M.A., M.Sc., M.Com, MBA, MCA, M.Ed, Ph.D.",
             website: "https://keralauniversity.ac.in/",
             type: "State University"
-        }
+        },
+        {
+    name: "University of Rajasthan",
+    city: "Jaipur",
+    state: "Rajasthan",
+    type: "State University",
+    courses: "B.A., B.Com, B.Sc, BBA, MBA, MCA, LL.B.",
+    website: "https://www.uniraj.ac.in/"
+},
+
+{
+    name: "University of Lucknow",
+    city: "Lucknow",
+    state: "Uttar Pradesh",
+    type: "State University",
+    courses: "B.A., B.Com, B.Sc, BBA, MBA, MCA, LL.B.",
+    website: "https://www.lkouniv.ac.in/"
+},
+
+{
+    name: "University of Calicut",
+    city: "Malappuram",
+    state: "Kerala",
+    type: "State University",
+    courses: "B.A., B.Com, B.Sc, BBA, MBA, MCA",
+    website: "https://uoc.ac.in/"
+},
+
+{
+    name: "Savitribai Phule Pune University",
+    city: "Pune",
+    state: "Maharashtra",
+    type: "State University",
+    courses: "B.A., B.Com, B.Sc, BBA, MBA, MCA, LL.B.",
+    website: "https://www.unipune.ac.in/"
+},
+
+{
+    name: "University of Jammu",
+    city: "Jammu",
+    state: "Jammu and Kashmir",
+    type: "Central University",
+    courses: "B.A., B.Com, B.Sc, BBA, MBA, MCA, LL.B.",
+    website: "https://www.jammuuniversity.ac.in/"
+},
+
+{
+    name: "Panjab University",
+    city: "Chandigarh",
+    state: "Chandigarh",
+    type: "Central University",
+    courses: "B.A., B.Com, B.Sc, BBA, MBA, MCA, LL.B.",
+    website: "https://puchd.ac.in/"
+},
+
+{
+    name: "University of Patna",
+    city: "Patna",
+    state: "Bihar",
+    type: "State University",
+    courses: "B.A., B.Com, B.Sc, BBA, MBA, LL.B.",
+    website: "https://pup.ac.in/"
+},
+{
+    name: "Gauhati University",
+    city: "Guwahati",
+    state: "Assam",
+    type: "State University",
+    courses: "B.A., B.Com, B.Sc, BBA, MBA, MCA, LL.B.",
+    website: "https://gauhati.ac.in/"
+},
+{
+    name: "Osmania Medical College",
+    city: "Hyderabad",
+    state: "Telangana",
+    type: "Government Medical College",
+    courses: "MBBS, B.Pharm",
+    website: "https://osmaniamedicalcollege.org/"
+},
+{
+    name: "Gandhi Medical College",
+    city: "Hyderabad",
+    state: "Telangana",
+    type: "Government Medical College",
+    courses: "MBBS",
+    website: "https://gandhihospital.gov.in/"
+},
+
+{
+    name: "Nizam's Institute of Medical Sciences",
+    city: "Hyderabad",
+    state: "Telangana",
+    type: "Medical Institute",
+    courses: "MBBS",
+    website: "https://www.nims.edu.in/"
+},
+
+{
+    name: "Institute of Medical Sciences, BHU",
+    city: "Varanasi",
+    state: "Uttar Pradesh",
+    type: "Medical Institute",
+    courses: "MBBS",
+    website: "https://www.bhu.ac.in/ims/"
+},
+
+{
+    name: "King George's Medical University",
+    city: "Lucknow",
+    state: "Uttar Pradesh",
+    type: "Medical University",
+    courses: "MBBS",
+    website: "https://www.kgmu.org/"
+},
+
+{
+    name: "Manipal College of Pharmaceutical Sciences",
+    city: "Manipal",
+    state: "Karnataka",
+    type: "Pharmacy College",
+    courses: "B.Pharm",
+    website: "https://www.manipal.edu/mcops.html"
+},
     ];
 
     const filteredColleges = colleges.filter((college) => {
@@ -211,6 +380,24 @@ function Colleges() {
     return (
         <div className="colleges-page">
 
+          {recommendedCareer && (
+        <div className="dashboard-card">
+            <h3>🎯 Your Recommended Career</h3>
+            <p>
+                CareerAI recommends exploring colleges and courses related to:
+            </p>
+            <h2>{recommendedCareer}</h2>
+
+             {careerCourseMap[recommendedCareer] && (
+            <p>
+                💡 Suggested course:
+                <strong> {careerCourseMap[recommendedCareer]}</strong>
+            </p>
+        )}
+        </div>
+    )}
+  
+
             <div className="colleges-header">
                 <h1>Government College Explorer 🎓</h1>
 
@@ -243,6 +430,11 @@ function Colleges() {
         <option value="Maharashtra">Maharashtra</option>
         <option value="Tamil Nadu">Tamil Nadu</option>
         <option value="Kerala">Kerala</option>
+        <option value="Rajasthan">Rajasthan</option>
+        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+        <option value="Chandigarh">Chandigarh</option>
+        <option value="Bihar">Bihar</option>
+        <option value="Assam">Assam</option>
     </select>
 
     <select
@@ -250,16 +442,17 @@ function Colleges() {
         onChange={(e) => setCourseFilter(e.target.value)}
     >
         <option value="All">All Courses</option>
-        <option value="B.Tech">B.Tech / Engineering</option>
-        <option value="BCA">BCA</option>
-        <option value="BBA">BBA</option>
-        <option value="MBA">MBA</option>
-        <option value="MCA">MCA</option>
-        <option value="B.Sc">Science</option>
-        <option value="B.A.">Arts</option>
-        <option value="B.Com">Commerce</option>
-        <option value="LL.B.">Law</option>
-        <option value="MBBS">Medical</option>
+<option value="B.Tech">B.Tech / Engineering</option>
+<option value="BCA">BCA / Computer Applications</option>
+<option value="B.Sc">B.Sc / Science</option>
+<option value="B.A.">B.A. / Arts & Humanities</option>
+<option value="B.Com">B.Com / Commerce</option>
+<option value="BBA">BBA / Management</option>
+<option value="MBA">MBA / Management</option>
+<option value="MCA">MCA / Computer Applications</option>
+<option value="LL.B.">LL.B. / Law</option>
+<option value="MBBS">MBBS / Medicine</option>
+<option value="B.Pharm">B.Pharm / Pharmacy</option>
     </select>
 
     <select
@@ -311,10 +504,17 @@ function Colleges() {
             </div>
 
             {filteredColleges.length === 0 && (
-                <p className="no-colleges">
-                    No colleges found.
-                </p>
-            )}
+    <div className="no-colleges">
+        <h3>🔍 No colleges found</h3>
+        <p>
+            Try changing your search, state, course, or college type.
+        </p>
+        <p>
+            You can also select <strong>All Courses</strong> and{" "}
+            <strong>All States</strong> to explore everything available.
+        </p>
+    </div>
+)}
 
         </div>
     );

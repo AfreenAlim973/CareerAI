@@ -81,6 +81,10 @@ useEffect(() => {
 
             <h1>Welcome, {user ? user.name : "User" }! 👋</h1>
 
+            <button onClick={handleLogout}>
+    Logout
+</button>
+
             {recommendedCareer && (
     <div className="dashboard-card">
         <h2>🎯 Your Recommended Career</h2>
@@ -168,13 +172,22 @@ useEffect(() => {
         <button onClick={() => navigate("/roadmap")}>View Roadmap</button>
     </div>
 
+            <div className="dashboard-card">
+        <h2>🚀 Opportunities</h2>
+
+        <p>
+            Explore internships, hackathons, certifications,
+            scholarships, and research opportunities.
+        </p>
+
+        <button onClick={() => navigate("/opportunities")}>
+            Explore Opportunities 
+        </button>
+    </div>
+
 </div>
 
-    <button onClick={handleLogout}>
-        Logout
-    </button>
-
-        </div>
+</div>
         
     );
 }

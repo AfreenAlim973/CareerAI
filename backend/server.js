@@ -210,7 +210,7 @@ app.post("/api/reset-password/:token", async (req, res) => {
 
 app.put("/api/profile", async (req, res) => {
   try {
-    const { email, course, skills, interests } = req.body;
+    const { email, stream, course, skills, interests } = req.body;
 
     const user = await User.findOne({ email });
 
@@ -220,6 +220,7 @@ app.put("/api/profile", async (req, res) => {
       });
     }
 
+    user.stream = stream;
     user.course = course;
     user.skills = skills;
     user.interests = interests;
@@ -253,6 +254,7 @@ app.get("/api/profile/:email", async (req, res) => {
     }
 
     res.status(200).json({
+      stream: user.stream,
       course: user.course,
       skills: user.skills,
       interests: user.interests
