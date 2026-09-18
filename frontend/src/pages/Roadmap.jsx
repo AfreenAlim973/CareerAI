@@ -19,7 +19,7 @@ useEffect(() => {
 
         try {
             const response = await fetch(
-                `http://localhost:5000/api/assessment/${savedUser.email}`
+                `https://careerai-cagq.onrender.com/api/assessment/${savedUser.email}`
             );
 
             const data = await response.json();
@@ -1463,7 +1463,7 @@ useEffect(() => {
         description: "Explore opportunities in mathematics, research, education, analytics, technology, and related fields."
     }
 
-],
+]
 };
 
 const steps = roadmapSteps[career] || [

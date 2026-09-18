@@ -19,7 +19,7 @@ function ResetPassword() {
 
         try {
             const response = await fetch(
-                `http://localhost:5000/api/reset-password/${token}`,
+                `https://careerai-cagq.onrender.com/api/reset-password/${token}`,
                 {
                     method: "POST",
                     headers: {

@@ -543,7 +543,7 @@ if (stream === "Other") {
     if (savedUser) {
         try {
             const response = await fetch(
-                "http://localhost:5000/api/assessment",
+                "https://careerai-cagq.onrender.com/api/assessment",
                 {
                     method: "PUT",
                     headers: {
