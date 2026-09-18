@@ -10,7 +10,7 @@ function ForgotPassword() {
 
     try {
         const response = await fetch(
-            "http://localhost:5000/api/forgot-password",
+    "https://careerai-cagq.onrender.com/api/forgot-password/",
             {
                 method: "POST",
                 headers: {
