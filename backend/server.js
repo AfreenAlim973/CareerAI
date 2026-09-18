@@ -17,7 +17,11 @@ const transporter = nodemailer.createTransport({
   }
 });
 
-app.use(cors());
+app.use(cors({
+    origin: "https://career-ai-two-tau.vercel.app",
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type"]
+}));
 app.use(express.json());
 
 app.get("/", (req, res) => {
